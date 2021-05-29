@@ -33,7 +33,6 @@ function silly_field_formatters_theme(){
     'silly_field_formatters_tooltip' => [
       'variables' => [
         'markup' => '',
-        'attributes' => array(),
       ],
     ],
   ];

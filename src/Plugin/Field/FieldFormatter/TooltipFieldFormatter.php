@@ -60,9 +60,6 @@ class TooltipFieldFormatter extends FormatterBase {
       $elements[$delta] = [
         '#theme' => 'silly_field_formatters_tooltip',
         '#markup' => $this->viewValue($item),
-        '#attributes' => [
-          'direction' => 'right',
-        ],
         '#attached' => [
           'library' => [
             'silly_field_formatters/silly-library',

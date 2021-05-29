@@ -5,7 +5,6 @@ silly-library:
     js/tooltips.js: {}
   dependencies:
     - core/jquery
-    - silly_field_formatters/qtip
 
   css:
     theme:
