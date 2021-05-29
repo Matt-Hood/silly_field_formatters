@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Contains silly_field_formatters.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function silly_field_formatters_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the silly_field_formatters module.
+    case 'help.page.silly_field_formatters':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module provides the following field text formatters to all text fields: Rot12, Slugify, Tooltip') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+
+/**
+ * Implements hook_theme()
+ */
+
+function silly_field_formatters_theme(){
+  return [
+    'silly_field_formatters_tooltip' => [
+      'variables' => [
+        'markup' => '',
+        'attributes' => array(),
+      ],
+    ],
+  ];
+}

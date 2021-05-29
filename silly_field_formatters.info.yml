@@ -1,0 +1,6 @@
+name: 'Silly Field Formatters'
+type: module
+description: 'This module provides the following field text formatters to all text fields: Rot12, Slugify, Tooltip'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Custom'

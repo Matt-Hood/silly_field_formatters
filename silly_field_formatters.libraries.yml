@@ -1,0 +1,13 @@
+silly-library:
+  version: 1.x
+  js:
+    js/jquery.qtip.min.js: {}
+    js/tooltips.js: {}
+  dependencies:
+    - core/jquery
+    - silly_field_formatters/qtip
+
+  css:
+    theme:
+      css/jquery.qtip.min.css: {}
+      css/silly-formatters.css: {}

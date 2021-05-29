@@ -1,0 +1,7 @@
+services:
+  slugify_client:
+    class: Cocur\Slugify\Slugify
+
+  rot13_client:
+    class: Drupal\silly_field_formatters\MySillyServices\SillyRotThirteenService
+
