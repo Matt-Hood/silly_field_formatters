@@ -2,37 +2,53 @@
 
 namespace Drupal\silly_field_formatters\MySillyServices;
 
-class SillyRotThirteenService {
+class SillyRotThirteenService
+{
+    public function myRot13AlgorithmHelper($wholeWord)
+    {
+      /**
+       * creates an alphabet array
+       */
+        foreach (range('a', 'z') as $elements) {
+            $alphabetArray[] = $elements;
+        }
 
-  public function myRot13AlgorithmHelper($wholeWord, $alphabetArray = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'))
-  {
+      /**
+       * handles edge case when there is a blank space
+       */
+        if ($wholeWord === ' ') {
+            return $wholeWord;
+        }
 
-    if ($wholeWord == ' ') {
-      $encryptedLetter = ' ';
-      return $encryptedLetter;
+      /**
+       * handles logic for when the letter is past the 13th index in the array
+       * includes logic for handling capital vs non capital letters
+       */
+        $key = array_search(strtolower($wholeWord), $alphabetArray, true);
+
+        if ($key > 13) {
+            $key -= 13;
+            if (strtolower($wholeWord) === $wholeWord) {
+                return $alphabetArray[$key];
+            }
+                return strtoupper($alphabetArray[$key]);
+        }
+
+      /**
+       * handles logic for when the letter is before or at the 13th index in the array
+       * includes logic for handling capital vs non capital letters
+       */
+        $key += 13;
+
+        if (strtolower($wholeWord) === $wholeWord) {
+            return $alphabetArray[$key];
+        }
+        return strtoupper($alphabetArray[$key]);
     }
 
-    $key = array_search(strtolower($wholeWord), $alphabetArray);
-
-    if ($key > 13) {
-      $key -= 13;
-      $encryptedLetter = $alphabetArray[$key];
-
-      return $encryptedLetter;
+    public function myRot13Algorithm($word): string
+    {
+        $result = array_map(array($this, 'myRot13AlgorithmHelper'), str_split($word));
+        return implode($result);
     }
-    $key += 13;
-    $encryptedLetter = $alphabetArray[$key];
-
-    if (strtolower($wholeWord) == $wholeWord) {
-      return $encryptedLetter;
-    }
-    return strtoupper($encryptedLetter);
-  }
-
-  public function myRot13Algorithm($word)
-  {
-    $result = array_map(array($this, 'myRot13AlgorithmHelper'), str_split($word));
-    $result = implode($result);
-    return $result;
-  }
 }
