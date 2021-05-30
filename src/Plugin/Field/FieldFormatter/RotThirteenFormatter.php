@@ -108,8 +108,6 @@ class RotThirteenFormatter extends FormatterBase
    */
     protected function viewValue(FieldItemInterface $item): string
     {
-    // The text value has no text format assigned to it, so the user input
-    // should equal the output, including newlines.
         return nl2br(Html::escape($item->value));
     }
 
@@ -127,7 +125,7 @@ class RotThirteenFormatter extends FormatterBase
             $configuration['label'],
             $configuration['view_mode'],
             $configuration['third_party_settings'],
-            // Add any services you want to inject here
+            // injecting my rot13 service
             $container->get('rot13_client')
         );
     }
