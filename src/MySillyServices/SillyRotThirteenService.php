@@ -31,6 +31,11 @@ class SillyRotThirteenService
        */
         $key = array_search(strtolower($wholeWord), $alphabetArray, true);
 
+        /* handles logic if letter is at the 13th index  */
+        if ($key === 13) {
+            return $alphabetArray[25];
+        }
+
         if ($key > 13) {
             $key -= 13;
             if (strtolower($wholeWord) === $wholeWord) {
