@@ -21,7 +21,11 @@ use Drupal\Core\Field\FieldDefinitionInterface;
  *   module = "silly_field_formatters",
  *   label = @Translation("Silly Rot13 formatter"),
  *   field_types = {
- *     "string"
+ *     "string",
+ *     "string_long",
+ *     "text",
+ *     "text_long",
+ *     "text_with_summary",
  *   }
  * )
  */

@@ -1,0 +1,14 @@
+{
+    "name": "drupal/silly_field_formatters",
+    "description": "provides three silly field formatters for text fields",
+    "type": "drupal-module",
+    "require": {
+        "cocur/slugify": "^4.0"
+    },
+    "authors": [
+        {
+            "name": "Matthew Hood",
+            "email": "matt.hood@simon.rochester.edu"
+        }
+    ]
+}

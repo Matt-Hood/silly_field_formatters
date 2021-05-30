@@ -4,6 +4,7 @@ namespace Drupal\silly_field_formatters\Plugin\Field\FieldFormatter;
 
 use Cocur\Slugify\Slugify;
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Field\Annotation\FieldFormatter;
 use Drupal\Core\Field\FieldItemInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
@@ -20,7 +21,11 @@ use Drupal\Core\Field\FieldDefinitionInterface;
  *   id = "slugify_field_formatter",
  *   label = @Translation("Slugify field formatter"),
  *   field_types = {
- *     "string"
+ *     "string",
+ *     "string_long",
+ *     "text",
+ *     "text_long",
+ *     "text_with_summary",
  *   }
  * )
  */

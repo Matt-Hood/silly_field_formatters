@@ -4,6 +4,7 @@ namespace Drupal\silly_field_formatters\MySillyServices;
 
 class SillyRotThirteenService
 {
+
     public function myRot13AlgorithmHelper($wholeWord)
     {
       /**
@@ -20,6 +21,10 @@ class SillyRotThirteenService
             return $wholeWord;
         }
 
+      /* Checks if the letter passed is in the alphabet else return '?' */
+        if (!in_array(strtolower($wholeWord), $alphabetArray)) {
+            return '?';
+        }
       /**
        * handles logic for when the letter is past the 13th index in the array
        * includes logic for handling capital vs non capital letters

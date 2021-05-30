@@ -16,7 +16,11 @@ use Drupal\Core\Form\FormStateInterface;
  *   id = "tooltip_field_formatter",
  *   label = @Translation("Tooltip field formatter"),
  *   field_types = {
- *     "string"
+ *     "string",
+ *     "string_long",
+ *     "text",
+ *     "text_long",
+ *     "text_with_summary",
  *   }
  * )
  */
