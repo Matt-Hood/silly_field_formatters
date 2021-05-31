@@ -25,17 +25,17 @@ class SillyRotThirteenService
         if (!in_array(strtolower($wholeWord), $alphabetArray)) {
             return '?';
         }
-      /**
-       * handles logic for when the letter is past the 13th index in the array
-       * includes logic for handling capital vs non capital letters
-       */
-        $key = array_search(strtolower($wholeWord), $alphabetArray, true);
 
-        /* handles logic if letter is at the 13th index  */
+      /* handles logic if letter is at the 13th index  */
+        $key = array_search(strtolower($wholeWord), $alphabetArray, true);
         if ($key === 13) {
             return $alphabetArray[25];
         }
 
+      /**
+       * handles logic for when the letter is past the 13th index in the array
+       * includes logic for handling capital vs non capital letters
+       */
         if ($key > 13) {
             $key -= 13;
             if (strtolower($wholeWord) === $wholeWord) {
